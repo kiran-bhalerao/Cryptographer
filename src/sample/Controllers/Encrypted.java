@@ -22,7 +22,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Encrypted implements Initializable{
+public class Encrypted implements Initializable {
     @FXML
     private JFXTextArea message;
 
@@ -34,23 +34,22 @@ public class Encrypted implements Initializable{
 
     @FXML
     void close(MouseEvent event) {
-        Node source= (Node) event.getSource();
-        Stage stage= (Stage) source.getScene().getWindow();
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
 
     @FXML
     void copyClicked(MouseEvent event) throws SQLException {
-        Node source= (Node) event.getSource();
-        Stage stage= (Stage) source.getScene().getWindow();
+//        Node source= (Node) event.getSource();
+//        Stage stage= (Stage) source.getScene().getWindow();
 
-        if(saveCheckBox.isSelected()) {
+        if (saveCheckBox.isSelected()) {
             // add to database..
-            int lng=Context.getInstance().getMessage().length();
-            if(lng>40) {
-                lng=40;
+            int lng = Context.getInstance().getMessage().length();
+            if (lng > 40) {
+                lng = 40;
             }
-            else {}
             try {
                 PreparedStatement preparedStatement = Context.getInstance().getConnection().prepareStatement("INSERT into messages(title,message,user)values(?,?,?)");
                 preparedStatement.setString(1, Context.getInstance().getMessage().substring(0, lng));
@@ -58,8 +57,8 @@ public class Encrypted implements Initializable{
                 preparedStatement.setString(3, Context.getInstance().getUsername());
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
-            }catch (Exception e) {
-                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage() + " database prob");
             }
         }
 
@@ -73,8 +72,8 @@ public class Encrypted implements Initializable{
 
     @FXML
     void decryptClicked(MouseEvent event) throws IOException {
-        Node source= (Node) event.getSource();
-        Stage stage= (Stage) source.getScene().getWindow();
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
 
         Parent root = FXMLLoader.load(getClass().getResource("/sample/FXMLs/Decryption.fxml"));
         stage.setTitle("Encryption");
@@ -85,8 +84,8 @@ public class Encrypted implements Initializable{
 
     @FXML
     void settingClicked(MouseEvent event) throws IOException {
-        Node source= (Node) event.getSource();
-        Stage stage= (Stage) source.getScene().getWindow();
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
 
         Parent root = FXMLLoader.load(getClass().getResource("/sample/FXMLs/Setting.fxml"));
         stage.setTitle("Setting");
@@ -97,8 +96,8 @@ public class Encrypted implements Initializable{
 
     @FXML
     void viewClicked(MouseEvent event) throws IOException {
-        Node source= (Node) event.getSource();
-        Stage stage= (Stage) source.getScene().getWindow();
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
 
         Parent root = FXMLLoader.load(getClass().getResource("/sample/FXMLs/View.fxml"));
         stage.setTitle("View");
@@ -110,12 +109,12 @@ public class Encrypted implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        int lng=Context.getInstance().getMessage().length();
-        if(lng>40) {
-            lng=40;
+        int lng = Context.getInstance().getMessage().length();
+        if (lng > 40) {
+            lng = 40;
+        } else {
         }
-        else {}
-        title.setText(Context.getInstance().getMessage().substring(0,lng));
+        title.setText(Context.getInstance().getMessage().substring(0, lng));
         message.setText(Context.getInstance().getEncMessage());
     }
 }

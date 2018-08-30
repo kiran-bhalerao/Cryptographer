@@ -104,10 +104,9 @@ public class Decrypted implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         int lng = Context.getInstance().getDecMessage().length();
-        if (lng > 40) {
+        if (lng > 40)
             lng = 40;
-        } else {
-        }
+
         title.setText(Context.getInstance().getDecMessage().substring(0, lng));
         message.setText(Context.getInstance().getDecMessage());
     }

@@ -55,7 +55,6 @@ public class Splash implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-
             Context.getInstance().setUsername("");
             Context.getInstance().setPassword("");
 
@@ -66,9 +65,8 @@ public class Splash implements Initializable{
             PreparedStatement preparedStatement3 = Context.getInstance().getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS messages(mid INTEGER PRIMARY KEY AUTOINCREMENT ,title text,message text,user text)");
             preparedStatement3.executeUpdate();
             preparedStatement3.close();
-
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -3,8 +3,10 @@ package sample.Controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,10 +15,12 @@ import javafx.stage.Stage;
 import sample.Main.Context;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ResourceBundle;
 
-public class Login {
+public class Login implements Initializable {
     @FXML
     private JFXButton letsgoClicked;
 
@@ -28,10 +32,10 @@ public class Login {
 
     @FXML
     void backClicked(MouseEvent event) throws IOException {
-        Node source= (Node) event.getSource();
-        Stage stage= (Stage) source.getScene().getWindow();
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
 
-        Parent root= FXMLLoader.load(getClass().getResource("/sample/FXMLs/Splash.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/FXMLs/Splash.fxml"));
         stage.setTitle("Splash");
         stage.setResizable(false);
         stage.setScene(new Scene(root));
@@ -47,7 +51,7 @@ public class Login {
     void letsgoClicked(MouseEvent event) throws IOException {
 
         //check conditions
-        if(!username.getText().equals("") && !password.getText().equals("") && getLogin(username.getText(),password.getText())) {
+        if (!username.getText().equals("") && !password.getText().equals("") && getLogin(username.getText(), password.getText())) {
 
             Context.getInstance().setUsername(username.getText());
 
@@ -75,14 +79,18 @@ public class Login {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         return isLogin;
     }
 
-
     @FXML
     void socialClicked(MouseEvent e) throws IOException {
         new ProcessBuilder("x-www-browser", "https://www.facebook.com/kiran.nivruttibhalerao").start();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Platform.runLater(() -> username.requestFocus());
     }
 }
