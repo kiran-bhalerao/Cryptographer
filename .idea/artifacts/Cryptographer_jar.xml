@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Cryptographer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Cryptographer_jar</output-path>
+    <root id="archive" name="Cryptographer.jar">
+      <element id="module-output" name="Cryptographer" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/sqlite-jdbc-3.21.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jfoenix.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
