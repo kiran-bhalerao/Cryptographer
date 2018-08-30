@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="863.0" style="-fx-background-color: #EBEBEB;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Encrypted">
+    <children>
+        <JFXButton focusTraversable="false" layoutX="-1.0" onMouseClicked="#close" prefHeight="104.0" prefWidth="104.0" ripplerFill="#2502b2" style="-fx-background-color: white; -fx-background-radius: 0;" textFill="TRANSPARENT" />
+        <ImageView fitHeight="552.0" fitWidth="893.0" layoutX="103.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../res/back.png" />
+            </image>
+        </ImageView>
+        <Text fill="WHITE" layoutX="149.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENCRYPTED">
+            <font>
+                <Font name="System Bold" size="50.0" />
+            </font>
+        </Text>
+        <JFXButton layoutX="546.0" layoutY="461.0" onMouseClicked="#copyClicked" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: white;" text="Copy" />
+        <ImageView fitHeight="150.0" fitWidth="17.0" layoutX="44.0" layoutY="45.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../res/close.png" />
+            </image>
+        </ImageView>
+        <JFXTextArea fx:id="message" focusColor="#4d0c79" layoutX="282.0" layoutY="302.0" prefHeight="100.0" prefWidth="400.0" promptText="Your Encrypted Message" styleClass="pomptColor" stylesheets="@../Styles/style.css" unFocusColor="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </JFXTextArea>
+        <JFXTextField fx:id="title" focusColor="#4d0c79" layoutX="279.0" layoutY="167.0" prefHeight="40.0" prefWidth="400.0" promptText="Auto Generated TiTle" styleClass="pomptColor" stylesheets="@../Styles/style.css" unFocusColor="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </JFXTextField>
+        <JFXButton layoutX="-1.0" layoutY="111.0" onMouseClicked="#viewClicked" prefHeight="104.0" prefWidth="104.0" ripplerFill="#2502b2" style="-fx-background-color: white; -fx-background-radius: 0;" textFill="TRANSPARENT" />
+        <Text layoutX="33.0" layoutY="168.0" onMouseClicked="#viewClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="VIEW">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <JFXButton layoutX="-1.0" layoutY="221.0" onMouseClicked="#decryptClicked" prefHeight="104.0" prefWidth="104.0" ripplerFill="#2502b2" style="-fx-background-color: white; -fx-background-radius: 0;" textFill="TRANSPARENT" />
+        <Text layoutX="18.0" layoutY="281.0" onMouseClicked="#decryptClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="DECRYPT">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <JFXButton layoutX="-1.0" layoutY="332.0" onMouseClicked="#settingClicked" prefHeight="104.0" prefWidth="104.0" ripplerFill="#2502b2" style="-fx-background-color: white; -fx-background-radius: 0;" textFill="TRANSPARENT" />
+        <Text layoutX="16.0" layoutY="392.0" onMouseClicked="#settingClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="SETTINGS">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <JFXCheckBox fx:id="saveCheckBox" layoutX="286.0" layoutY="469.0" selected="true" style="-jfx-unchecked-color: white;" text=" Save" textFill="WHITE" />
+    </children>
+</AnchorPane>

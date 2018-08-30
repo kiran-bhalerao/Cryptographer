@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="863.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Splash">
+   <children>
+      <ImageView fitHeight="552.0" fitWidth="893.0" layoutX="103.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/back.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="183.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRYPTOGRAPHER">
+         <font>
+            <Font name="System Bold" size="62.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="70.0" fitWidth="571.0" layoutX="199.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/LOREM.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="520.0" layoutY="396.0" onMouseClicked="#signupClicked" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;" text="SIGNUP" />
+      <ImageView fx:id="pin" fitHeight="40.0" fitWidth="22.0" layoutX="464.0" layoutY="494.0" onMouseClicked="#socialClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/Path_3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="fb" fitHeight="120.0" fitWidth="16.0" layoutX="393.0" layoutY="491.0" onMouseClicked="#socialClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/Path_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="twit" fitHeight="150.0" fitWidth="30.0" layoutX="538.0" layoutY="496.0" onMouseClicked="#socialClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/Path_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="17.0" layoutX="44.0" layoutY="40.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../res/close.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="287.0" layoutY="397.0" onMouseClicked="#loginClicked" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #4D0C79;" text="LOGIN" textFill="WHITE" />
+   </children>
+</AnchorPane>

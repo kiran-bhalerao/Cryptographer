@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="863.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Login">
+    <children>
+        <ImageView fitHeight="552.0" fitWidth="893.0" layoutX="103.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../res/back.png" />
+            </image>
+        </ImageView>
+        <Text fill="WHITE" layoutX="149.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN HERE">
+            <font>
+                <Font name="System Bold" size="50.0" />
+            </font>
+        </Text>
+        <JFXButton layoutX="546.0" layoutY="391.0" onMouseClicked="#letsgoClicked" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: white;" text="Let's Go !" />
+        <ImageView fitHeight="40.0" fitWidth="22.0" layoutX="283.0" layoutY="482.0" onMouseClicked="#socialClicked" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../res/Path_3.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="120.0" fitWidth="16.0" layoutX="212.0" layoutY="479.0" onMouseClicked="#socialClicked" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../res/Path_1.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="32.0" layoutX="357.0" layoutY="482.0" onMouseClicked="#socialClicked" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../res/Path_2.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="25.0" layoutX="39.0" layoutY="40.0" onMouseClicked="#backClicked" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../res/left_arrow.png" />
+            </image>
+        </ImageView>
+      <JFXTextField fx:id="username" focusColor="#4d0c79" layoutX="282.0" layoutY="183.0" prefHeight="40.0" prefWidth="400.0" promptText="Username" styleClass="pomptColor" stylesheets="@../Styles/style.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="#4d0c79" layoutX="281.0" layoutY="274.0" prefHeight="40.0" prefWidth="400.0" promptText="Password" styleClass="pomptColor" stylesheets="@../Styles/style.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <Text fill="WHITE" layoutX="668.0" layoutY="513.0" onMouseClicked="#forgetClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget Password !">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
